@@ -1,0 +1,332 @@
+@import url("https://fonts.googleapis.com/css2?family=Codystar&display=swap");
+:root {
+  --color1: #051923;
+  --color2: #003554;
+  --color3: #006494;
+  --color4: #0582ca;
+  --color5: #00a6fb;
+  --text: #fff;
+  --danger: rgb(239, 126, 126);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+body {
+  color: var(--text);
+  background-color: var(--color1);
+  padding: 3.2em;
+}
+
+.main-container {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+.title {
+  text-align: center;
+  font-family: "Codystar", cursive;
+  font-size: 5rem;
+  letter-spacing: 0.3em;
+  font-weight: bold;
+}
+
+.logo {
+  font-size: 10rem;
+  color: var(--color5);
+}
+
+.start-screen-container {
+  font-size: 2rem;
+  text-align: center;
+  display: grid;
+  gap: 1em;
+  width: 80%;
+}
+
+.form-trivia {
+  display: grid;
+  gap: 1em;
+  padding: 1em;
+}
+
+.form-trivia-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form-trivia-item label {
+  font-size: 1.8rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+input,
+select {
+  padding: 0.6em;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: large;
+  border-radius: 0.5em;
+}
+
+.btn-box {
+  padding-top: 1em;
+  margin: 0 auto;
+}
+
+.btn {
+  all: unset;
+  cursor: pointer;
+  background-color: var(--color4);
+  padding: 0.5em;
+  border-radius: 1em;
+  width: 5em;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  filter: brightness(0.8);
+  outline: 0.1em solid var(--color5);
+}
+
+.aux-container {
+  width: 100%;
+  padding: 2em;
+  text-align: center;
+}
+
+/* Spinner */
+.fa-spinner {
+  color: var(--color4);
+  font-size: 5rem;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+/* error */
+
+.error-container {
+  display: flex;
+  font-size: 2.5rem;
+  gap: 0.5em;
+  justify-content: center;
+  align-items: center;
+}
+
+.fa-heart-crack {
+  color: var(--color4);
+}
+
+/* Question container */
+
+.question-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+  justify-content: center;
+  align-items: center;
+}
+
+.question-title {
+  max-width: 80%;
+  font-size: 2.5rem;
+  font-family: inherit;
+  text-align: center;
+}
+
+.options-container {
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  padding: 0.5em;
+  width: 100%;
+}
+
+.btn-option {
+  width: 60%;
+  box-sizing: border-box;
+  padding-left: 1em;
+}
+
+.btn-option:hover {
+  transform: translateX(0.8em);
+}
+
+.btn-option.correct {
+  background-color: var(--color5);
+}
+.btn-option.wrong {
+  background-color: var(--danger);
+}
+
+.btn[disabled]:hover {
+  cursor: not-allowed;
+  transform: none;
+}
+.btn[disabled].selected {
+  transform: translateX(2rem);
+}
+
+/* Next Button */
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-next {
+  font-size: 1.5rem;
+  background-color: var(--color3);
+  text-align: center;
+}
+
+/* Progress container */
+.progress-container {
+  width: 100%;
+  font-size: 2rem;
+  font-family: inherit;
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: auto auto;
+}
+
+progress {
+  width: 100%;
+  padding: 1em;
+  accent-color: var(--color4);
+  grid-column: 1 / -1;
+}
+
+/* Question Header */
+
+.question-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+
+/* Finish container */
+
+.finish-container {
+  font-size: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  font-family: inherit;
+}
+
+.btn-reset {
+  font-size: 2rem;
+}
+
+.timer {
+  background-color: var(--color4);
+  text-align: center;
+  font-size: 1.5rem;
+  cursor: unset;
+}
+
+/* Media queries */
+
+@media (max-width: 1000px) {
+  .header {
+    justify-content: center;
+    gap: 1em;
+  }
+  .title {
+    font-size: 4rem;
+  }
+  .logo {
+    font-size: 7rem;
+  }
+  .main-container {
+    width: 100%;
+  }
+  .start-screen-container {
+    font-size: 1.8rem;
+  }
+  .form-trivia-item label {
+    font-size: 1.5rem;
+  }
+  .btn-option {
+    width: 80%;
+  }
+  .question-header {
+    font-size: 1.8rem;
+  }
+  .question-title {
+    font-size: 2rem;
+  }
+  .progress-container {
+    font-size: 1.8rem;
+  }
+  .finish-container {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .start-screen-container {
+    width: 100%;
+    font-size: 1.5rem;
+  }
+  .title {
+    font-size: 3rem;
+  }
+  .logo {
+    font-size: 6rem;
+  }
+  .btn-option {
+    width: 100%;
+    font-size: 1.8rem;
+  }
+  .question-header {
+    font-size: 1.5rem;
+  }
+  .question-title {
+    font-size: 1.8rem;
+  }
+  .progress-container {
+    font-size: 1.5rem;
+  }
+  .finish-container {
+    font-size: 2rem;
+  }
+}
